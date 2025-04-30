@@ -6,9 +6,9 @@ import { queryClient } from "~/lib/api";
 import "~/styles/global.css";
 
 export default function RootLayout() {
-	return (
-		<QueryClientProvider client={queryClient}>
-			<Slot />
-		</QueryClientProvider>
-	);
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Slot />
+    </QueryClientProvider>
+  );
 }

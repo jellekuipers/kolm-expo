@@ -12,28 +12,28 @@ export const queryClient = new QueryClient();
 const isNative = Platform.OS === "android" || Platform.OS === "ios";
 
 export const trpc = createTRPCOptionsProxy<AppRouter>({
-	client: createTRPCClient({
-		links: [
-			httpBatchLink({
-				transformer: superjson,
-				url: `${process.env.EXPO_PUBLIC_BASE_URL}/api/trpc`,
-				...(isNative
-					? {
-							headers() {
-								const headers = new Map<string, string>();
-								// @ts-expect-error https://github.com/better-auth/better-auth/issues/2031
-								const cookies = authClient.getCookie();
+  client: createTRPCClient({
+    links: [
+      httpBatchLink({
+        transformer: superjson,
+        url: `${process.env.EXPO_PUBLIC_BASE_URL}/api/trpc`,
+        ...(isNative
+          ? {
+              headers() {
+                const headers = new Map<string, string>();
+                // @ts-expect-error https://github.com/better-auth/better-auth/issues/2031
+                const cookies = authClient.getCookie();
 
-								if (cookies) {
-									headers.set("Cookie", cookies);
-								}
+                if (cookies) {
+                  headers.set("Cookie", cookies);
+                }
 
-								return Object.fromEntries(headers);
-							},
-						}
-					: {}),
-			}),
-		],
-	}),
-	queryClient,
+                return Object.fromEntries(headers);
+              },
+            }
+          : {}),
+      }),
+    ],
+  }),
+  queryClient,
 });
