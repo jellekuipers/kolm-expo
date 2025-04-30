@@ -6,22 +6,22 @@ import { Logo } from "~/components/logo";
 import { authClient } from "~/lib/auth-client";
 
 export default function Index() {
-	const handleSignIn = async () => {
-		await authClient.signIn.email({
-			email: "admin@kolm.start",
-			password: "password1234",
-		});
+  const handleSignIn = async () => {
+    await authClient.signIn.email({
+      email: "admin@kolm.start",
+      password: "password1234",
+    });
 
-		router.replace("/");
-	};
+    router.replace("/");
+  };
 
-	return (
-		<View className="flex items-center justify-center flex-1 gap-4">
-			<Logo />
-			<Text className="text-4xl font-bold">kolm</Text>
-			<View className="flex items-center justify-center gap-2">
-				<Button onPress={handleSignIn}>Sign in</Button>
-			</View>
-		</View>
-	);
+  return (
+    <View className="flex items-center justify-center flex-1 gap-4">
+      <Logo />
+      <Text className="text-4xl font-bold">kolm</Text>
+      <View className="flex items-center justify-center gap-2">
+        <Button onPress={handleSignIn}>Sign in</Button>
+      </View>
+    </View>
+  );
 }

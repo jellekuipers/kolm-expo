@@ -5,32 +5,32 @@ import { db } from "~/db";
 import { auth } from "~/lib/auth";
 
 export async function createTRPCContext({ headers }: { headers: Headers }) {
-	const session = await auth.api.getSession({
-		headers,
-	});
+  const session = await auth.api.getSession({
+    headers,
+  });
 
-	return {
-		db,
-		session,
-	};
+  return {
+    db,
+    session,
+  };
 }
 
 export const t = initTRPC.context<typeof createTRPCContext>().create({
-	transformer: superjson,
+  transformer: superjson,
 });
 
 export const createTRPCRouter = t.router;
 
 const enforceUserIsAuthenticated = t.middleware(({ ctx, next }) => {
-	if (!ctx.session?.user) {
-		throw new TRPCError({ code: "UNAUTHORIZED" });
-	}
+  if (!ctx.session?.user) {
+    throw new TRPCError({ code: "UNAUTHORIZED" });
+  }
 
-	return next({
-		ctx: {
-			session: { ...ctx.session, user: ctx.session.user },
-		},
-	});
+  return next({
+    ctx: {
+      session: { ...ctx.session, user: ctx.session.user },
+    },
+  });
 });
 
 export const publicProcedure = t.procedure;
