@@ -5,9 +5,6 @@ export const user = pgTable(
   "user",
   {
     id: text("id").primaryKey(),
-    banExpires: timestamp("ban_expires"),
-    banned: boolean("banned"),
-    banReason: text("ban_reason"),
     email: text("email").notNull().unique(),
     emailVerified: boolean("email_verified").notNull(),
     image: text("image"),
@@ -24,7 +21,6 @@ export const session = pgTable(
   {
     id: text("id").primaryKey(),
     expiresAt: timestamp("expires_at").notNull(),
-    impersonatedBy: text("impersonated_by"),
     ipAddress: text("ip_address"),
     token: text("token").notNull().unique(),
     userAgent: text("user_agent"),
