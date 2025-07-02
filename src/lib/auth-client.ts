@@ -8,8 +8,8 @@ export const authClient = createAuthClient({
   plugins: [
     expoClient({
       scheme: "kolm-expo",
-      storagePrefix: "kolm-expo",
       storage: SecureStore,
+      storagePrefix: "kolm-expo",
     }) as BetterAuthPlugin,
   ],
 });

@@ -1,4 +1,4 @@
-import { type GestureResponderEvent, Pressable, Text } from 'react-native';
+import { type GestureResponderEvent, Pressable, Text } from "react-native";
 
 interface ButtonProps {
   className?: string;

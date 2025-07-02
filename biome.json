@@ -1,33 +1,63 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "vcs": {
-    "enabled": false,
-    "clientKind": "git",
-    "useIgnoreFile": false
+  "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              [":PACKAGE:"],
+              ":BLANK_LINE:",
+              [":ALIAS:"],
+              ":BLANK_LINE:",
+              [":PATH:"]
+            ]
+          }
+        },
+        "recommended": true,
+        "useSortedAttributes": "on",
+        "useSortedKeys": "on",
+        "useSortedProperties": "on"
+      }
+    },
+    "enabled": true
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": []
+    "includes": ["src/**"]
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space"
   },
-  "organizeImports": {
-    "enabled": true
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double"
+    }
   },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true,
       "style": {
-        "noNonNullAssertion": "off"
+        "noInferrableTypes": "error",
+        "noNonNullAssertion": "off",
+        "noParameterAssign": "error",
+        "noUnusedTemplateLiteral": "error",
+        "noUselessElse": "error",
+        "useAsConstAssertion": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useNumberNamespace": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error"
       }
     }
   },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "double"
-    }
+  "vcs": {
+    "clientKind": "git",
+    "enabled": false,
+    "useIgnoreFile": false
   }
 }
