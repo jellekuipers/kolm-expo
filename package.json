@@ -3,7 +3,7 @@
   "description": "A very minimal Expo starter with API routes, tRPC, Drizzle ORM, better-auth and TailwindCSS",
   "author": "Jelle Kuipers <info@jellekuipers.com> (https://jellekuipers.com)",
   "main": "expo-router/entry",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": true,
   "scripts": {
     "db:generate": "drizzle-kit generate",

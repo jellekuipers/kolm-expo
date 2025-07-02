@@ -5,10 +5,10 @@ import { appRouter } from "~/trpc/router";
 
 const handler = async (request: Request) =>
   await fetchRequestHandler({
+    createContext: () => createTRPCContext(request),
+    endpoint: "/api/trpc",
     req: request,
     router: appRouter,
-    endpoint: "/api/trpc",
-    createContext: () => createTRPCContext(request),
   });
 
 export { handler as GET, handler as POST };
