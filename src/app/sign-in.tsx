@@ -1,9 +1,9 @@
 import { router } from "expo-router";
 import { Text, View } from "react-native";
 
-import { Button } from "~/components/button";
-import { Logo } from "~/components/logo";
-import { authClient } from "~/lib/auth-client";
+import { Button } from "@/components/button";
+import { Logo } from "@/components/logo";
+import { authClient } from "@/lib/auth-client";
 
 export default function Index() {
   const handleSignIn = async () => {
@@ -16,10 +16,10 @@ export default function Index() {
   };
 
   return (
-    <View className="flex items-center justify-center flex-1 gap-4">
+    <View>
       <Logo />
-      <Text className="text-4xl font-bold">kolm</Text>
-      <View className="flex items-center justify-center gap-2">
+      <Text>kolm</Text>
+      <View>
         <Button onPress={handleSignIn}>Sign in</Button>
       </View>
     </View>

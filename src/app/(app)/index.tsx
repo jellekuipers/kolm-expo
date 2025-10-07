@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { ActivityIndicator, View } from "react-native";
 
-import { Button } from "~/components/button";
-import { Logo } from "~/components/logo";
-import { Text } from "~/components/text";
-import { trpc } from "~/lib/api";
-import { authClient } from "~/lib/auth-client";
+import { Button } from "@/components/button";
+import { Logo } from "@/components/logo";
+import { Text } from "@/components/text";
+import { trpc } from "@/lib/api";
+import { authClient } from "@/lib/auth-client";
 
 export default function Index() {
   const { data: session } = authClient.useSession();
@@ -18,15 +18,15 @@ export default function Index() {
   };
 
   return (
-    <View className="flex items-center justify-center flex-1 gap-4">
+    <View>
       <Logo />
-      <Text className="text-4xl font-bold">kolm</Text>
-      <View className="flex items-center justify-center gap-2">
-        <Text className="text-base">{session?.user.email}</Text>
+      <Text>kolm</Text>
+      <View>
+        <Text>{session?.user.email}</Text>
         {isLoadingStats ? (
           <ActivityIndicator />
         ) : (
-          <Text className="text-base">{stats?.users} users</Text>
+          <Text>{stats?.users} users</Text>
         )}
         <Button onPress={handleSignOut}>Sign out</Button>
       </View>

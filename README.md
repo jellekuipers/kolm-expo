@@ -16,9 +16,9 @@
 
 ## About The Project
 
-A very minimal Expo starter with `tRPC`, `drizzle-orm`, `better-auth` and `tailwindcss`, using Expo's API routes.
+A very minimal Expo starter with `tRPC`, `drizzle-orm`, `better-auth` and `unistylescss`, using Expo's API routes.
 
-Check out <a href="https://github.com/jellekuipers/kolm-start">kolm-start</a>, for a `@tanstack/react-start` starter with `tRPC`, `drizzle-orm`, `better-auth` and `tailwindcss`.
+Check out <a href="https://github.com/jellekuipers/kolm-start">kolm-start</a>, for a `@tanstack/react-start` starter with `tRPC`, `drizzle-orm`, `better-auth` and `unistylescss`.
 
 Or <a href="https://github.com/jellekuipers/kolm-start-admin">kolm-start-admin</a>, for a `@tanstack/react-start` + `better-auth` admin starter, with `drizzle-orm`, `tRPC`, `@radix-ui/themes`.
 
@@ -86,5 +86,5 @@ Don't forget to give the project a star! Thanks again!
 - [tRPC](https://trpc.io/docs)
 - [Drizzle ORM](https://orm.drizzle.team/)
 - [better-auth](https://www.better-auth.com/)
-- [TailwindCSS](https://tailwindcss.com/docs/v4-beta)
+- [TailwindCSS](https://unistylescss.com/docs/v4-beta)
 - [Best-README-Template](https://github.com/othneildrew/Best-README-Template)

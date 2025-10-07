@@ -2,9 +2,9 @@ import "dotenv/config";
 
 import { eq } from "drizzle-orm";
 
-import { db } from "~/db";
-import { user } from "~/db/schema";
-import { auth } from "~/lib/auth";
+import { db } from "@/db";
+import { user } from "@/db/schema";
+import { auth } from "@/lib/auth";
 
 async function main() {
   const adminUser = await auth.api.signUpEmail({
