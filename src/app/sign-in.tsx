@@ -1,5 +1,6 @@
 import { router } from "expo-router";
 import { Text, View } from "react-native";
+import { StyleSheet } from "react-native-unistyles";
 
 import { Button } from "@/components/button";
 import { Logo } from "@/components/logo";
@@ -16,7 +17,7 @@ export default function Index() {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <Logo />
       <Text>kolm</Text>
       <View>
@@ -25,3 +26,12 @@ export default function Index() {
     </View>
   );
 }
+
+const styles = StyleSheet.create(() => ({
+  container: {
+    alignItems: "center",
+    flex: 1,
+    includeFontPadding: true,
+    justifyContent: "center",
+  },
+}));

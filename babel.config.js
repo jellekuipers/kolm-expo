@@ -2,10 +2,15 @@ module.exports = function (api) {
   api.cache(true);
 
   return {
-    presets: [
-      ['babel-preset-expo'],
-      ['react-native-unistyles/plugin'],
-      'babel-plugin-react-compiler',
+    presets: [['babel-preset-expo']],
+    plugins: [
+      [
+        'react-native-unistyles/plugin',
+        {
+          root: 'src',
+        },
+        'babel-plugin-react-compiler',
+      ],
     ],
   };
 };
