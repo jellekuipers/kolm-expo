@@ -2,8 +2,8 @@
   "name": "kolm-expo",
   "description": "A very minimal Expo starter with API routes, tRPC, Drizzle ORM, better-auth and Unistyles",
   "author": "Jelle Kuipers <info@jellekuipers.com> (https://jellekuipers.com)",
-  "main": "expo-router/entry",
-  "version": "1.0.6",
+  "main": "./src/index.ts",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "db:generate": "drizzle-kit generate",
@@ -50,11 +50,14 @@
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-native": "0.79.5",
+    "react-native-edge-to-edge": "1.6.0",
     "react-native-gesture-handler": "2.24.0",
+    "react-native-nitro-modules": "^0.29.8",
     "react-native-reanimated": "3.17.4",
     "react-native-safe-area-context": "5.4.0",
     "react-native-screens": "4.11.1",
     "react-native-svg": "15.11.2",
+    "react-native-unistyles": "^3.0.14",
     "react-native-web": "0.20.0",
     "react-native-webview": "13.13.5",
     "superjson": "^2.2.2"
@@ -62,6 +65,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2.2.5",
     "@types/react": "19.0.10",
+    "babel-plugin-react-compiler": "^19.0.0-beta-ebf51a3-20250411",
     "drizzle-kit": "^0.31.5",
     "typescript": "5.8.3"
   }
